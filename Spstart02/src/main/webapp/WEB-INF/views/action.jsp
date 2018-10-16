@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h2>나는 ${MYNAME} 입니다</h2>
-<h3>우리집은 ${MY_ADDR} 입니다</h3>
+<h3>래디 액션!!</h3>
+
 </body>
 </html>
