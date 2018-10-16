@@ -16,6 +16,6 @@ SpStart03 프로젝트
 	component-scan base-package를 변경하여
    	controllers 패키지만 scan 하도록 설정
    
-8. 브라우저에서 /start03/hello.do를 요청하면, 
+8. 브라우저에서 /start03/hello.biz를 요청하면, 
 	hello.jsp 파일을 읽어 브라우저로 보내되
 9. 브라우저에 Hello 대한민국 이라고 표시하도록 작성
