@@ -1,4 +1,4 @@
-package com.biz.start03;
+package com.biz.start03.controllers;
 
 import java.text.DateFormat;
 import java.util.Date;
@@ -28,12 +28,14 @@ public class HomeController {
 		
 		Date date = new Date();
 		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
-		
 		String formattedDate = dateFormat.format(date);
-		
 		model.addAttribute("serverTime", formattedDate );
-		
 		return "home";
+	}
+	
+	@RequestMapping("hello.biz")
+	public String hello(Model model) {
+		return "hello";
 	}
 	
 }
