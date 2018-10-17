@@ -11,7 +11,40 @@
 $(function(){
 	// $("btnSave").click(function());
 	$("#btnSave").on("click",function(){
-		alert("저장 버튼 클릭")
+		// alert("저장 버튼 클릭")
+		var userName = $("#username").val()
+		var addr = $("#addr").val()
+		var telno = $("#telno").val()
+		var email = $("#email").val()
+		
+		// 이름을 입력하시 않았으면
+		if(userName == "") {
+			alert("이름을 입력하세요")
+			$("#username").focus()
+			return false
+		}
+		if(addr == "") {
+			alert('주소를 입력하세요')
+			$("#addr").focus()
+			return false;
+		}
+		
+		var emailTest = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+		if(email == "") {
+			alert('이메일을 입력하세요')
+			$("#email").focus()
+			return false
+		}
+		
+		if(! emailTest.test(email)) {
+			alert('이메일이 형식에 맞지 않습니다')
+			$('#email').focus()
+			return false
+		}
+		
+		// 전송을 실행하라
+		$('form').submit()
+		
 	})
 })
 </script>
@@ -47,7 +80,7 @@ $(function(){
 		placeholder="이메일을 입력하세요"
 		class="w3-input w3-border" 
 		type="email" 
-		name="telno" id="telno">
+		name="email" id="email">
 
 	<button
 		type="button"
