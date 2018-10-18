@@ -9,6 +9,15 @@
 
 <script>
 $(function(){
+	
+	$("#btnDelete").on("click",function(){
+		if(confirm("정말 삭제할까요")) {
+			$(location)
+				.attr("href",
+						"/form01/delete.do?id=${MEMBER.id}")
+		}
+	})
+	
 	// $("btnSave").click(function());
 	$("#btnSave").on("click",function(){
 		// alert("저장 버튼 클릭")
@@ -55,14 +64,19 @@ $(function(){
 <section class="w3-panel w3-padding-16">
 <form action="/form01/insert_ok.do" method="post">
 	<label class="w3-label">이름</label>
+	<input type="hidden" 
+		name="id"
+		value=<c:out value='${MEMBER.id}' default='0' /> > 
 	<input 
 		placeholder="이름을 입력하세요"
+		value="${MEMBER.username}"
 		class="w3-input w3-border" 
 		type="text" 
 		name="username" id="username">
 	
 	<label>주소</label>
 	<input  
+		value="${MEMBER.addr}"
 		placeholder="주소를 입력하세요"
 		class="w3-input w3-border" 
 		type="text" 
@@ -70,6 +84,7 @@ $(function(){
 	
 	<label>전화번호</label>
 	<input  
+		value="${MEMBER.telno}"
 		placeholder="전화번호를 입력하세요"
 		class="w3-input w3-border" 
 		type="tel" 
@@ -77,6 +92,7 @@ $(function(){
 
 	<label>이메일</label>
 	<input  
+		value="${MEMBER.email}"
 		placeholder="이메일을 입력하세요"
 		class="w3-input w3-border" 
 		type="email" 
@@ -86,7 +102,13 @@ $(function(){
 		type="button"
 		id="btnSave" 
 		class="w3-button w3-blue w3-input" >저장</button>
-
+		
+	<c:if test="${MEMBER.id >0 }">
+		<button
+			type="button"
+			id="btnDelete" 
+			class="w3-button w3-red w3-input" >삭제</button>
+	</c:if>
 </form>
 </section>
 <%@ include file="/WEB-INF/include/include-footer.jspf" %>

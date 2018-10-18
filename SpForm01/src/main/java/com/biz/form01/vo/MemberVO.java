@@ -12,11 +12,18 @@ package com.biz.form01.vo;
 // DO : Data Object
 public class MemberVO {
 	
+	private long id ;
 	private String username ;
 	private String telno ;
 	private String addr ;
 	private String email;
 	
+	public long getId() {
+		return id;
+	}
+	public void setId(long id) {
+		this.id = id;
+	}
 	public String getUsername() {
 		return username;
 	}
