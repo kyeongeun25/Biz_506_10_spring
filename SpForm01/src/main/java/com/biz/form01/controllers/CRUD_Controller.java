@@ -83,4 +83,5 @@ public class CRUD_Controller {
 		dao.delete(id);
 		return "redirect:view_list.do";
 	}
+
 }
