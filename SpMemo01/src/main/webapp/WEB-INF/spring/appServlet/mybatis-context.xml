@@ -20,7 +20,7 @@
 	
 		<property name="dataSource" ref="ds"/>
 		<property name="configLocation" value="/WEB-INF/spring/database/memo-config.xml"/>
-		<property name="mapperLocations" value="/WEB-INF/spring/database/memo-mapper.xml"/>
+		<property name="mapperLocations" value="/WEB-INF/spring/database/*-mapper.xml"/>
 	</bean>
 
 	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">

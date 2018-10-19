@@ -2,3 +2,32 @@
 <!DOCTYPE configuration
   PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
+  
+  <configuration>
+  	<settings>
+  	<!-- 
+  		oracle DB를 사용할때
+  		만약 vo의 member 변수 이름을 
+  		user_name 형식으로 작성하면
+  		userName으로 인식(변환)하라는 표식 
+  	-->
+  		<setting 
+  			name="mapUnderscoreToCamelCase" 
+  			value="true"/>
+  	</settings>
+  	<typeAliases>
+  		<typeAlias 
+  			type="com.biz.memo01.vo.MemoVO"
+  			alias="MemoVO"/>
+  	
+  		<typeAlias 
+  			type="com.biz.memo01.vo.MemoInfoVO"
+  			alias="MemoInfoVO"/>
+  			
+  		<typeAlias 
+  			type="com.biz.memo01.vo.MemberVO" 
+  			alias="MemberVO"/>
+  	
+  	</typeAliases>
+  	
+  </configuration>

@@ -10,6 +10,10 @@
 <%@ include file="/WEB-INF/include/include-nav.jspf" %>
 <section class="w3-panel w3-topbar w3-bottombar w3-border-green">
 	<c:choose>
+		<c:when test="${BODY == 'LIST' }">
+			<%@ include file="/WEB-INF/body/memo_list.jsp" %>
+		</c:when>
+
 		<c:when test="${BODY == 'WRITE'}">
 			<%@ include file="/WEB-INF/body/memo_write.jsp" %>
 		</c:when>
@@ -21,6 +25,9 @@
 			<h4>제목:${MEMO.subject }</h4>
 			<h4>메모내용:${MEMO.memoText }</h4>
 
+		</c:when>
+		<c:when test="${BODY == 'JOIN_FORM'}">
+			<%@ include file="/WEB-INF/body/member_join.jsp" %>
 		</c:when>
 		<c:otherwise>
 			<h3>반갑습니다</h3>

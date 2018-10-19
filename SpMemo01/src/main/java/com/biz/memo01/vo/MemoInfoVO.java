@@ -1,13 +1,16 @@
 package com.biz.memo01.vo;
 
-public class MemoVO {
-	
+public class MemoInfoVO {
+
 	private long id ; // PK
 	private String memoCat ;
 	private String flag ;
 	private String date ;
 	private String subject;
 	private String memoText;
+	
+	private String cValue;
+	private String fValue;
 	
 	public long getId() {
 		return id;
@@ -45,12 +48,24 @@ public class MemoVO {
 	public void setMemoText(String memoText) {
 		this.memoText = memoText;
 	}
-	@Override
-	public String toString() {
-		return "MemoVO [id=" + id + ", memoCat=" + memoCat + ", flag=" + flag + ", date=" + date + ", subject="
-				+ subject + ", memoText=" + memoText + "]";
+	public String getcValue() {
+		return cValue;
+	}
+	public void setcValue(String cValue) {
+		this.cValue = cValue;
+	}
+	
+	public String getfValue() {
+		return fValue;
+	}
+	public void setfValue(String fValue) {
+		this.fValue = fValue;
 	}
 
+	
+	
+	
+	
 	
 	
 }
